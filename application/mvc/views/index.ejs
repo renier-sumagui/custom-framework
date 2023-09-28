@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports Players</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/index.css" />
+</head>
+<body>
+    <nav>
+        <h1>Search Users</h1>
+        <form id="search-form" action="/search" method="get">
+            <input id="name" type="text" name="name" placeholder="Name" autocomplete="off"/>
+            <label><input type="checkbox" name="gender" value="female" />Female</label>
+            <label><input type="checkbox" name="gender" value="male" />Male</label>
+            <p>Sports</p>
+            <label><input type="checkbox" name="sport" value="basketball" />Basketball</label>
+            <label><input type="checkbox" name="sport" value="volleyball" />Volleyball</label>
+            <label><input type="checkbox" name="sport" value="baseball" />Baseball</label>
+            <label><input type="checkbox" name="sport" value="soccer" />Soccer</label>
+            <label><input type="checkbox" name="sport" value="football" />Football</label>
+            <input type="submit" value="Search" />
+        </form>
+    </nav>
+    <main id="main">
+<%  if (players) {
+%>      <%- players %>    
+<% }
+%>    </main>
+    <script>
+        const form = document.getElementById('search-form');
+
+        form.addEventListener('submit', async function(event) {
+            event.preventDefault();
+
+            const formData = new FormData(form);
+            const action = form.getAttribute('action');
+
+            const searchParams = new URLSearchParams(formData);
+            const queryString = searchParams.toString();
+
+            const response = await fetch(`${action}?${queryString}`, {
+                method: 'get'
+            });
+            
+            const data = await response.json();
+            if (data.players) {
+                document.getElementById('main').innerHTML = data.players;
+            }
+        });
+    </script>
+</body>
+</html>

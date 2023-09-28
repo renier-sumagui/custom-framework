@@ -1,0 +1,62 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+    /* border: 1px solid red; */
+}
+
+p, h1, body {
+    margin: 0;
+}
+p, input, label {
+    font-size: 18px;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 300px auto;
+    gap: 10px;
+}
+body, main, nav { padding: 10px; }
+main, nav {
+    display: inline-block;
+    vertical-align: top;
+    height: 100%;
+    border: 5px solid black;
+}
+nav {
+}
+    form {
+        margin-left: 10px;
+    }
+        form > p {
+            margin-top: 10px;
+        }
+        label {
+            display: block;
+        }
+        #name {
+            padding: 2px;
+            margin: 10px 0;
+        }
+        input {
+            border: 1px solid black;
+            outline: none;
+        }
+main { overflow-y: auto; }
+    .card {
+        border: 2px solid black;
+        width: -webkit-fit-content;
+        width: -moz-fit-content;
+        height: fit-content;
+        width: fit-content;
+        display: inline-block;
+        text-align: center;
+    }
+    .card img {
+        width: 200px;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+    }
+    input[type="submit"] {
+        margin-top: 20px;
+    }
