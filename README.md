@@ -1,6 +1,6 @@
 # Welcome to my custom framework!
 
-This is a custom framework on top of Express. I'll briefly explain the folder structure, features, and how to run it.
+This is a custom framework on top of Express. I'll briefly explain the features, folder structure, and how to run it.
 
 # Features
 
