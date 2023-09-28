@@ -4,7 +4,7 @@ This is a custom framework on top of Express. I'll briefly explain the features,
 
 # Features
 
-The framework is inspired from CodeIgniter3. It has a profiler that similar to CodeIgniter's but less detailed, still, it logs the important data that the developer must know when debugging. The framework's routing is very simple, enabling the developer to only specify the path, class controller, controller method, and the HTTP method. 
+The framework is inspired from CodeIgniter3. It has a profiler that similar to CodeIgniter's but less detailed, still, it logs the important data that the developer must know when debugging. The framework's routing is very simple, enabling the developer to only specify the path, class controller, controller method, and the HTTP method. The framework also uses the EJS as its view engine, you can change this in the **index.js** if you want to use other view engines.
 
 # Folder Structure
 
